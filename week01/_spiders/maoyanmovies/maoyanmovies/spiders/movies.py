@@ -74,15 +74,3 @@ class MoviesSpider(scrapy.Spider):
         movie2 = pd.DataFrame(data = self.data)
         movie2.to_csv('../movie2.csv', encoding='utf8', index=False, header=False)
 
-
-            # link = movie.xpath('./a/@href')
-            # print('-----------')
-            # print(title)
-            # print(link)
-            # print('-----------')
-            # print(title.extract())
-            # print(link.extract())
-            # print(title.extract_first())
-            # print(link.extract_first())
-            # print(title.extract_first().strip())
-            # print(link.extract_first().strip())
