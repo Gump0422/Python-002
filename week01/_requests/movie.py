@@ -32,7 +32,7 @@ response = requests.get(url, headers=headers)
 
 bs_info = bs(response.text, 'html.parser')
 
-# with open('1.html', 'r', encoding='utf-8') as f:
+# with open('maoyan.html', 'r', encoding='utf-8') as f:
 #      html = f.read()
 
 # bs_info = bs(html, 'html.parser')
