@@ -1,3 +1,9 @@
+"""
+作业1：
+安装并使用 requests、bs4 库，爬取猫眼电影（）的前 10 个电影名称、电影类型和上映时间，并以 UTF-8 字符集保存到 csv 格式的文件中。
+"""
+
+
 import requests
 import pandas as pd
 from bs4 import BeautifulSoup as bs

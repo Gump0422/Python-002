@@ -4,3 +4,6 @@
 # 班级: 1班
 # 小组: 9组
 # 作业&总结链接: https://github.com/Gump0422/Python-002/tree/master/week01
+
+* 作业一: _requests文件下
+* 作业二: _spiders文件下
