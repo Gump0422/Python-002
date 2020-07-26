@@ -58,9 +58,9 @@ class MoviesSpider(scrapy.Spider):
             part2 = movie.xpath('./div[@class="movie-hover-title movie-hover-brief"]')
             info = [ tag.extract() for tag in part2 ]
             date = info[0].split('\n')[2].strip()
-            self.data = self.data + [[name] + [type] + [date]]
             
             # 打印关键信息
+            self.data = self.data + [[name] + [type] + [date]]
             print('-----------------------------')
             print(f'name={name}, type={type}, date={date}, data={self.data}')
 
