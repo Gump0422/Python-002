@@ -46,18 +46,15 @@ class MoviesSpider(scrapy.Spider):
         movies = Selector(response=response).xpath('//div[@class="movie-hover-info"]')
         top = 10
         for movie in movies:
-            # 路径使用 / .  .. 不同的含义　
-            res =[]
+            # 第一部分: 提取电影名称和电影类型
             part1 = movie.xpath('./div[@class="movie-hover-title"]')
-
-            # 提取电影名称和电影类型
             info = [ tag.extract() for tag in part1]
             name = re.search(r'.*<span class="name ">(.*?)</span>', info[0], re.M|re.I)
             if name:
                 name = name.group(1)
             type = info[1].split('\n')[2].strip()
 
-            # 提取电影上映时间
+            # 第二部分: 提取电影上映时间
             part2 = movie.xpath('./div[@class="movie-hover-title movie-hover-brief"]')
             info = [ tag.extract() for tag in part2 ]
             date = info[0].split('\n')[2].strip()
@@ -67,6 +64,7 @@ class MoviesSpider(scrapy.Spider):
             print('-----------------------------')
             print(f'name={name}, type={type}, date={date}, data={self.data}')
 
+            # 按排名取前十名
             top -= 1
             if top <= 0:
                 break
