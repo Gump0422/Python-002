@@ -75,5 +75,5 @@ class MoviesSpider(scrapy.Spider):
                 break
         
         movie2 = pd.DataFrame(data = self.data)
-        movie2.to_csv('../movie2.csv', encoding='utf8', index=False, header=False)
+        movie2.to_csv('../movie2.csv', encoding='utf8', index=False, header=False, mode='a')
 
